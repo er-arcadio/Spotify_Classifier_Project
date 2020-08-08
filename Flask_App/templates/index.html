@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Is it a hit!?</title>
+  <style>
+  body{
+    font-family: sans-serif;
+  }
+  .button {
+    background-color: LightPink;
+    border: none;
+    color: Black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .animal-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 10px 10px 0px #eee;
+    width: 300px;
+    margin: auto;
+  }
+  </style>
+
+</head>
+
+<body align="center">
+
+  <h2>Enter in your song's attributes, and I will tell you if it'll be a hit or not.</h2>
+
+  <form action="/predict_top100/" method="post">
+
+    <div class="animal-card" align="center">
+
+      How long is the song (in minutes)?:
+      <br>
+        <input type="text" name="duration_min">
+      <br><br>
+      
+      Is it acoustic?:
+      <br>
+        <input type="radio" name="acoustic" value=1>Yes
+        <input type="radio" name="acoustic" value=0>No
+      <br><br>
+
+      How danceable is it (1-10)?:
+      <br>
+        <input type="range" name="danceable" min="0" max="1" step=".001">
+      <br><br>
+      
+      How much energy does it have (1-10)?:
+      <br>
+      	<input type="range" name="energy" min="0" max="1" step=".001">
+      <br><br>
+
+      What's the tempo (in bpm)?:
+      <br>
+        <input type="text" name="tempo">
+      <br><br>
+
+      How speechy is it (10 being poetic rap)?:
+      <br>
+        <input type="range" name="talky" min="0" max="0.6" step=".001">
+      <br><br>
+      
+      How happy is the song (1-10)?:
+      <br>
+        <input type="range" name="happiness" min="0" max="1" step=".01">
+      <br><br>
+      
+      How loud is the song (1-10)?:
+      <br>
+        <input type="range" name="loud" min="-22" max="-1" step=".001">
+      <br><br>
+
+      Is it a live recording?:
+      <br>
+        <input type="radio" name="live" value=1>Yes
+        <input type="radio" name="live" value=0>No
+      <br><br>
+
+      Is it an instrumental?:
+      <br>
+        <input type="radio" name="instrumental" value=1>Yes
+        <input type="radio" name="instrumental" value=0>No
+      <br><br>
+
+      Major or Minor?:
+      <br>
+        <input type="radio" name="mode" value=1>Major
+        <input type="radio" name="mode" value=0>Minor
+      <br><br>
+
+      What key is it in?:
+      <br>
+        <select name="key" id="cars">
+          <option value="0">C</option>
+          <option value="1">C#</option>
+          <option value="2">D</option>
+          <option value="3">Eb</option>
+          <option value="4">E</option>
+          <option value="5">F</option>
+          <option value="6">F#</option>
+          <option value="7">G</option>
+          <option value="8">Ab</option>
+          <option value="9">A</option>
+          <option value="10">Bb</option>
+          <option value="11">B</option>
+        </select>
+      <br>
+
+    </div>
+
+  <br>
+
+  <button type="submit" class="button">
+    Is it a hit?
+  </button>
+  </form>
+
+  <br>
+
+  {% if message %}
+  <h2>{{message}}</h2>
+  {% endif %}
+
+</body>
+</html>
