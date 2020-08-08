@@ -48,3 +48,24 @@ The goal of the project is to create a predictor that will classify a song as a 
 
 [Presentation (pdf)](https://github.com/er-arcadio/Spotify_Classifier_Project/blob/master/Project_3_Presentation.pdf)
 
+
+## Results
+
+**Final Model**: Random Tree Forest, classweights, SMOTE sampling, and F-Beta as a metric with a heavier weight on Precision
+
+**Top 3 Important Features**: Duration/Dance (quick and danceable), duration (alone), and duration/acousticness ("authentic")
+
+**Scores**: 
+- ROC/AUC: .76
+- FBeta: .51
+- Precision: .71
+
+## Other Resources
+
+[Link](https://github.com/thisismetis/chi20_ds15/blob/master/curriculum/project-03/project-03-introduction/project_03.md) to the specs for Project 3
+
+[Link](https://docs.google.com/document/d/1oAJrWNR7HxNJVI2IHUuHArEvBccowLqvPObYbqtH0rs/edit) to the Grading Rubric.
+
+[Link](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf) to choosing a good chart for presentations
+
+[Link](https://github.com/thisismetis/chi20_ds15/blob/master/curriculum/project-05/xgboost/GradientBoostedTrees_xgboost.ipynb) to incorporate XGBoost.
